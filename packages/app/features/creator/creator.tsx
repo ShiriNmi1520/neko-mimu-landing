@@ -122,7 +122,7 @@ export function CreatorSection() {
   return (
     <YStack f={1} jc='center' ai='center' p='$4'>
       <H1 ta='left'>Meet your creator</H1>
-      <XStack alignItems='center' space='$6'>
+      <XStack alignItems='center' gap='$6'>
         <GenerateDialog
           avatarUrl='https://media.discordapp.net/attachments/737897046953951235/1212004369323794482/IMG_8669.jpg?ex=65f04207&is=65ddcd07&hm=c72e211196222ce293bf4b74f5b84114c4c39d5717580207a3af42afac732035&=&format=webp&width=865&height=649'
           name='Thootau'
