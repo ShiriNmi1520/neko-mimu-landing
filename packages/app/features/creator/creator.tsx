@@ -5,12 +5,41 @@ import {
   Dialog,
   Sheet,
   Unspaced,
+  ListItem,
   XStack,
   YStack,
+  YGroup,
   Avatar,
 } from '@my/ui'
-import { X } from '@tamagui/lucide-icons'
+import { X, Github, Linkedin } from '@tamagui/lucide-icons'
 import { useState } from 'react'
+
+function SocialLink({ GitHubUser, GitHubLink, LinkedInUser, LinkedInLink }) {
+  return (
+    <YGroup alignSelf="center" bordered>
+      <YGroup.Item>
+        <ListItem
+          hoverTheme
+          icon={Github}
+          title="GitHub"
+          subTitle={GitHubUser}
+          // @ts-ignore
+          onClick={() => window.open(GitHubLink)}
+        />
+      </YGroup.Item>
+      <YGroup.Item>
+        <ListItem
+          hoverTheme
+          icon={Linkedin}
+          title="LinkedIn"
+          subTitle={LinkedInUser}
+          // @ts-ignore
+          onClick={() => window.open(LinkedInLink)}
+        />
+      </YGroup.Item>
+    </YGroup>
+  )
+}
 
 export function CreatorSection() {
   return (
@@ -66,8 +95,14 @@ export function CreatorSection() {
             >
               <Dialog.Title>Thootau</Dialog.Title>
               <Dialog.Description>
-                Make changes to your profile here. Click save when you're done.
+                太平洋の空遠く 輝やく南十字星
               </Dialog.Description>
+              <SocialLink
+                GitHubUser='Thootau'
+                GitHubLink='https://github.com/thootau99'
+                LinkedInUser='Hong Ki Khoo'
+                LinkedInLink='https://www.linkedin.com/in/hong-ki-khoo-806b7b244'
+              />
               <Unspaced>
                 <Dialog.Close asChild>
                   <Button
