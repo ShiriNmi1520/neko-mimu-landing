@@ -1,18 +1,17 @@
 import {
   Adapt,
+  Avatar,
   Button,
-  H1,
   Dialog,
+  H1,
+  ListItem,
   Sheet,
   Unspaced,
-  ListItem,
   XStack,
-  YStack,
   YGroup,
-  Avatar,
+  YStack,
 } from '@my/ui'
-import { X, Github, Linkedin } from '@tamagui/lucide-icons'
-import { useState } from 'react'
+import { Github, Linkedin, X } from '@tamagui/lucide-icons'
 
 function SocialLink({ GitHubUser, GitHubLink, LinkedInUser, LinkedInLink }) {
   return (
