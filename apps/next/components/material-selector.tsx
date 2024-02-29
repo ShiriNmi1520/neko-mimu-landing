@@ -64,7 +64,8 @@ export function MaterialSelector() {
   const [ imageLocation, setImageLocation ] = useState<Record< string, DraggableItem >>({})
   useEffect(() => {
 
-    const imageItems = imageArray.map(imageUrl => {
+    imageArray.map(imageUrl => {
+      console.log(imageUrl)
       const randomId = crypto.randomUUID()
       setImageLocation({ ...imageLocation, [randomId]: {
           item: imageUrl,
@@ -74,7 +75,7 @@ export function MaterialSelector() {
           y: 0
         } as DraggableItem })
     })
-  } )
+  }, [imageElement])
   return (
     <>
       <Stage width={300} height={300}>
