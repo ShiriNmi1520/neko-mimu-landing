@@ -1,7 +1,7 @@
 import {ItemLocation} from "./item-location";
 
 export interface DraggableItem extends ItemLocation{
-  item: any,
+  item: string,
   id: string
   isDragging: boolean
 }
