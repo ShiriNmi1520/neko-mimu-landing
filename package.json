@@ -22,9 +22,7 @@
   },
   "resolutions": {
     "react": "^18.2.0",
-    "@types/react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
     "react-refresh": "^0.14.0",
     "react-native-svg": "13.9.0",
     "react-native-web": "~0.19.6"
@@ -32,15 +30,26 @@
   "dependencies": {
     "@babel/runtime": "^7.18.9",
     "@manypkg/cli": "^0.19.1",
+    "canvas": "^2.11.2",
     "check-dependency-version-consistency": "^3.0.3",
-    "eslint": "^8.21.0",
     "konva": "^9.3.3",
     "node-gyp": "^9.3.1",
     "prettier": "^2.7.1",
     "react-konva": "^18.2.10",
     "turbo": "^1.10.3",
-    "typescript": "^5.3.3",
     "use-image": "^1.1.1"
   },
-  "packageManager": "yarn@4.1.0"
+  "packageManager": "yarn@4.1.0",
+  "devDependencies": {
+    "@types/eslint": "^8",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^7.1.0"
+  }
 }

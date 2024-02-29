@@ -1,5 +1,6 @@
 import { CreatorSection } from 'app/features/creator/creator'
 import Head from 'next/head'
+import {MaterialSelector} from "../../components/material-selector";
 
 export default function Page() {
   return (
@@ -7,6 +8,7 @@ export default function Page() {
       <Head>
         <title>Creator</title>
       </Head>
+      <MaterialSelector/>
       <CreatorSection />
     </>
   )
