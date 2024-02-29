@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  page:
+    image: node:20-alpine
+    volumes:
+      - .:/src/app
+    command: sh
+    tty: true
+    ports:
+      - "30080:3000"
