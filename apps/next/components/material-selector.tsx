@@ -1,11 +1,11 @@
 import useImage from 'use-image'
 import React, { Dispatch, SetStateAction } from 'react'
-import { DraggableImage } from '../interfaces/draggable-image'
+import { MaterialImage } from '../interfaces/draggable-image'
 import { Button } from 'tamagui'
 
 interface MaterialSelectorProps {
   imageUrl: string
-  setImageLocation: Dispatch<SetStateAction<Record<string, DraggableImage>>>
+  setImageLocation: Dispatch<SetStateAction<Record<string, MaterialImage>>>
 }
 export function MaterialSelector(props: MaterialSelectorProps) {
   const [thisImage] = useImage(props.imageUrl)
@@ -24,7 +24,9 @@ export function MaterialSelector(props: MaterialSelectorProps) {
               isDragging: false,
               x: 0,
               y: 0,
-            } as DraggableImage,
+              scaleX: 1,
+              scaleY: 1,
+            } as MaterialImage,
           }
         })
       }}

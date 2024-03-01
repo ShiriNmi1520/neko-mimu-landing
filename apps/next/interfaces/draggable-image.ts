@@ -1,7 +1,18 @@
 import { ItemLocation } from './item-location'
 
-export interface DraggableImage extends ItemLocation {
+interface Draggable {
+  isDragging: boolean
+}
+
+interface Selectable {
+  isSelected: boolean
+}
+
+export interface MaterialImage extends ItemLocation, Draggable, Selectable {
+  width: number
+  height: number
+  scaleX: number
+  scaleY: number
   image: HTMLImageElement | undefined
   id: string
-  isDragging: boolean
 }
