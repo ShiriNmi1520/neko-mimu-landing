@@ -1,34 +1,18 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "es2021": true
+  env: {
+    node: true
   },
-  "root": true,
-  "extends": [
-    "standard-with-typescript",
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-      "next"
   ],
-  "overrides": [
-    {
-      "env": {
-        "node": true
-      },
-      "files": [
-        ".eslintrc.{js,cjs}"
-      ],
-      "parserOptions": {
-        "sourceType": "script"
-      }
-    }
-  ],
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "plugins": [
-    "react"
-  ],
-  "rules": {
-  }
-}
+  parser: "@typescript-eslint/parser",
+  root: true,
+  // rules: {
+  //   "@typescript-eslint/ban-ts-comment": "off",
+  //   "@typescript-eslint/no-var-requires": "off",
+  //   "@typescript-eslint/no-empty-interface": "off",
+  //   "@typescript-eslint/no-unused-vars": ["warn"],
+  // }
+};
