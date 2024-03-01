@@ -1,3 +1,4 @@
+import React from 'react'
 import { config } from '@my/ui'
 import NextDocument, {
   DocumentContext,
@@ -15,7 +16,8 @@ export default class Document extends NextDocument {
     AppRegistry.registerComponent('Main', () => Main)
     const page = await ctx.renderPage()
 
-    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
     const { getStyleElement } = AppRegistry.getApplication('Main')
 
     /**

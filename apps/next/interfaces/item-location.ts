@@ -1,4 +1,4 @@
 export interface ItemLocation {
-  x: number,
-  y: number,
+  x: number
+  y: number
 }

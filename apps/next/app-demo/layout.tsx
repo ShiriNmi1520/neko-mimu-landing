@@ -1,5 +1,5 @@
 'use client'
-
+import React from 'react'
 import { TamaguiProvider } from './TamaguiProvider'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

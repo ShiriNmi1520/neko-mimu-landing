@@ -3,7 +3,7 @@ import '@tamagui/font-inter/css/400.css'
 import '@tamagui/font-inter/css/700.css'
 import 'raf/polyfill'
 
-import { NextThemeProvider, useRootTheme } from '@tamagui/next-theme'
+import { ColorScheme, NextThemeProvider, useRootTheme } from '@tamagui/next-theme'
 import { Provider } from 'app/provider'
 import Head from 'next/head'
 import React from 'react'
@@ -34,7 +34,7 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
   return (
     <NextThemeProvider
       onChangeTheme={(next) => {
-        setTheme(next as any)
+        setTheme(next as ColorScheme)
       }}
     >
       <Provider disableRootThemeClass defaultTheme={theme}>
