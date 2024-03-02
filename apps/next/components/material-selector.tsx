@@ -11,6 +11,8 @@ export function MaterialSelector(props: MaterialSelectorProps) {
   const [thisImage] = useImage(props.imageUrl)
   return (
     <Button
+      size={'$6'}
+      // icon={React.createElement('img', { src: props.imageUrl })}
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error
       onClick={() => {
@@ -31,7 +33,7 @@ export function MaterialSelector(props: MaterialSelectorProps) {
         })
       }}
     >
-      <img style={{ height: '14px', width: '14px' }} src={props.imageUrl} />
+      {/*<img style={{ height: '100%', width: '100%' }} src={props.imageUrl} />*/}
     </Button>
   )
 }
