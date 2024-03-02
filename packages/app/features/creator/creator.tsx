@@ -11,9 +11,10 @@ import {
   YGroup,
   YStack,
 } from '@my/ui'
+import { CreatorSocialLinkProps, CreatorInfoProps } from '@my/ui'
 import { Github, Linkedin, X } from '@tamagui/lucide-icons'
 import React from 'react'
-function SocialLink({ GitHubUser, GitHubLink, LinkedInUser, LinkedInLink }) {
+function SocialLink(SocialLinkProps: CreatorSocialLinkProps) {
   return (
     <YGroup bordered>
       <YGroup.Item>
@@ -21,9 +22,9 @@ function SocialLink({ GitHubUser, GitHubLink, LinkedInUser, LinkedInLink }) {
           hoverTheme
           icon={Github}
           title="GitHub"
-          subTitle={GitHubUser}
+          subTitle={SocialLinkProps.GitHubUser}
           // @ts-ignore
-          onClick={() => window.open(GitHubLink)}
+          onClick={() => window.open(SocialLinkProps.GitHubLink)}
         />
       </YGroup.Item>
       <YGroup.Item>
@@ -31,23 +32,23 @@ function SocialLink({ GitHubUser, GitHubLink, LinkedInUser, LinkedInLink }) {
           hoverTheme
           icon={Linkedin}
           title="LinkedIn"
-          subTitle={LinkedInUser}
+          subTitle={SocialLinkProps.LinkedInUser}
           // @ts-ignore
-          onClick={() => window.open(LinkedInLink)}
+          onClick={() => window.open(SocialLinkProps.LinkedInLink)}
         />
       </YGroup.Item>
     </YGroup>
   )
 }
 
-function GenerateDialog({ avatarUrl, name, description, socialLinks}) {
+function GenerateDialog(CreatorInfoProps: CreatorInfoProps) {
   return (
     <Dialog modal>
       <Dialog.Trigger asChild>
         <Avatar circular size='$10'>
           <Avatar.Image
-            accessibilityLabel={name}
-            source={{ uri: avatarUrl }}
+            accessibilityLabel={CreatorInfoProps.name}
+            source={{ uri: CreatorInfoProps.avatarUrl }}
           />
           <Avatar.Fallback backgroundColor='$blue10' />
         </Avatar>
@@ -89,15 +90,15 @@ function GenerateDialog({ avatarUrl, name, description, socialLinks}) {
           exitStyle={{ x: 0, y: 10, opacity: 0, scale: 0.95 }}
           gap='$4'
         >
-          <Dialog.Title>{name}</Dialog.Title>
+          <Dialog.Title>{CreatorInfoProps.name}</Dialog.Title>
           <Dialog.Description>
-            {description}
+            {CreatorInfoProps.description}
           </Dialog.Description>
           <SocialLink
-            GitHubUser={socialLinks.GitHubUser}
-            GitHubLink={socialLinks.GitHubLink}
-            LinkedInUser={socialLinks.LinkedInUser}
-            LinkedInLink={socialLinks.LinkedInLink}
+            GitHubUser={CreatorInfoProps.socialLinks.GitHubUser}
+            GitHubLink={CreatorInfoProps.socialLinks.GitHubLink}
+            LinkedInUser={CreatorInfoProps.socialLinks.LinkedInUser}
+            LinkedInLink={CreatorInfoProps.socialLinks.LinkedInLink}
           />
           <Unspaced>
             <Dialog.Close asChild>
