@@ -12,7 +12,7 @@ import {
   YStack,
 } from '@my/ui'
 import { Github, Linkedin, X } from '@tamagui/lucide-icons'
-
+import React from 'react'
 function SocialLink({ GitHubUser, GitHubLink, LinkedInUser, LinkedInLink }) {
   return (
     <YGroup bordered>
