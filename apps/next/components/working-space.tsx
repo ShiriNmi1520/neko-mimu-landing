@@ -8,6 +8,11 @@ import { XStack, YStack } from 'tamagui'
 export function WorkingSpace() {
   const [imageLocation, setImageLocation] = useState<Record<string, MaterialImage>>({})
   const [selectedId, setSelectedId] = useState<string>('')
+  const temlpateImaegs = [
+    'https://i1.sndcdn.com/artworks-TOJJyHynzM0iRSuW-9URBDA-t500x500.jpg',
+    'https://i1.sndcdn.com/artworks-TOJJyHynzM0iRSuW-9URBDA-t500x500.jpg',
+    'https://i1.sndcdn.com/artworks-TOJJyHynzM0iRSuW-9URBDA-t500x500.jpg',
+  ]
   return (
     <>
       <XStack padding={'$3'} gap={'$3'} justifyContent={'center'}>
@@ -27,11 +32,18 @@ export function WorkingSpace() {
             ))}
           </Layer>
         </Stage>
-        <YStack padding={'$3'} gap={'$3'}>
-          <MaterialSelector
-            imageUrl={'https://i1.sndcdn.com/artworks-TOJJyHynzM0iRSuW-9URBDA-t500x500.jpg'}
-            setImageLocation={setImageLocation}
-          />
+        <YStack padding={'$3'} gap={'$3'} flex={1} flexDirection={'row'}>
+          <XStack flexWrap="wrap" flexBasis={'70%'}>
+            {temlpateImaegs.map((image) => {
+              return (
+                <MaterialSelector
+                  imageUrl={image}
+                  setImageLocation={setImageLocation}
+                  key={crypto.randomUUID()}
+                />
+              )
+            })}
+          </XStack>
         </YStack>
       </XStack>
     </>

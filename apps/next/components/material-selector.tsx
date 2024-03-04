@@ -33,7 +33,7 @@ export function MaterialSelector(props: MaterialSelectorProps) {
         })
       }}
     >
-      {/*<img style={{ height: '100%', width: '100%' }} src={props.imageUrl} />*/}
+      <img style={{ height: '80%', width: 'auto', position: 'relative' }} src={props.imageUrl} />
     </Button>
   )
 }
